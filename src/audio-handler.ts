@@ -2,11 +2,16 @@ export class AudioRecorder {
     private mediaRecorder: MediaRecorder | null = null;
     private audioChunks: Blob[] = [];
     private isRecording = false;
+    private onStatusChange: (status: string) => void;
+    private onTranscriptionComplete: (text: string) => void;
 
     constructor(
-        private onStatusChange: (status: string) => void,
-        private onTranscriptionComplete: (text: string) => void
-    ) {}
+        onStatusChange: (status: string) => void,
+        onTranscriptionComplete: (text: string) => void
+    ) {
+        this.onStatusChange = onStatusChange;
+        this.onTranscriptionComplete = onTranscriptionComplete;
+    }
 
     async startRecording() {
         try {

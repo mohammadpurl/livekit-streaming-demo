@@ -1,9 +1,7 @@
 import StreamingAvatar, {
   AvatarQuality,
-  ElevenLabsModel,
   StreamingEvents,
   TaskType,
-  VoiceEmotion
 } from "@heygen/streaming-avatar";
 import { OpenAIAssistant } from "./openai-assistant";
 import { AudioRecorder } from './audio-handler';
@@ -79,8 +77,8 @@ async function initializeAvatarSession() {
       voice: {
         voiceId: "508da0af14044417a916cba1d00f632a",
         rate: 1.0,
-        emotion: VoiceEmotion.EXCITED,
-        model: ElevenLabsModel.eleven_flash_v2_5,
+        // emotion: VoiceEmotion.EXCITED,
+        // model: ElevenLabsModel.eleven_flash_v2_5,
       },
     });
 
